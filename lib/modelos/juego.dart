@@ -73,9 +73,9 @@ class Juego{
   }
 
   void getJuego(){
-    print("=====================");
+    print("========JUEGOS========");
     print("Local: ${marcador['Puntos locales']}");
     print("Visitante: ${marcador['Puntos visitante']}");
-    print("=====================");
+    print("======================");
   }
 }

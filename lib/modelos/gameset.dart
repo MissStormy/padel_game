@@ -66,7 +66,9 @@ class GameSet {
   }
 
   void getGameSet() {
+    print("\x1B[2J\x1B[0;0H");
     juego.getJuego();
+    print("========GAMESET======");
     print("Juegos locales: ${marcador['Juegos locales']}");
     print("Juegos visitante: ${marcador['Juegos visitante']}");
     print("=====================");
