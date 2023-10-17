@@ -41,6 +41,7 @@ class Vistas {
           menuConfig(MCopc);
         }
       case "2":
+      //Nos aseguramos de que el usuario ha creado el partido
         if (jugador1 != null && jugador2 != null && numSets != null) {
           printMenuPartido();
           while (MPopc != "3") {
@@ -49,6 +50,7 @@ class Vistas {
           }
         } else {
           print("Che, relaja, y configura primero el partido");
+          printMenuConfig();
         }
       case "3":
         print("Bye bye");
@@ -117,13 +119,18 @@ class Vistas {
     
     switch (MPopc) {
       case "1":
+        //Generamos un nuevo partido:
+        //Partido > Gameset > Juego
         setPartidoLocal = partido.addPuntoLocal();
         partido.printPartido();
         //printMenuPartido();
+        //Si se gana un set, se va sumando al marcador
         if (setPartidoLocal == true) {
           contLocal++;
           setPartidoLocal = false;
         }
+        //Si alcanzamos el numero de sets (se que esta mal)
+        //el jugador gana automaticamente
         if(contLocal == numSets){
           //print("Final de partido!! Ha ganado $jugador1");
           ganador = jugador1;
@@ -149,6 +156,7 @@ class Vistas {
         String? opc = stdin.readLineSync();
 
         if (opc == "S") {
+          //Pues eso, mucho daño
           print("Bola de fuego!! +20d10 de daño!!");
           exit(1);
         } else {

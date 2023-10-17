@@ -25,11 +25,14 @@ class Partido{
   //Metodos
   bool? addPuntoLocal(){
     bool? resultado = false;
+    //Recogemos los gameset 
     resultado = gameSet.addPuntoLocal();
-
+    //Si el jugador gana un gameset, se le suma 1
     if(resultado == true){
       numSetsLocal++;
       marcador['Sets locales'] = numSetsLocal;
+      //Esto tendria que ser sobre 3 o 5, pero vamos, que si
+      //tiene 2 sets + 1 (a 6 sets) gana por goleada
       if(numSetsLocal == 3){
         finalPartido = true;
       }else{

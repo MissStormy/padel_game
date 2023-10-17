@@ -29,11 +29,14 @@ class GameSet {
   //Metodos
   bool? addPuntoLocal() {
     bool? resultado = false;
+    //Recogemos el valor de los juegos
     resultado = juego.addPuntoLocal();
-    
+    //Si es true, entonces ha ganado el juego (40 puntos) y se le suma un juego
     if (resultado == true) {
       juegoLocal++;
       marcador['Juegos locales'] = juegoLocal;
+      //Cuando se llegan a 6 juegos, se apunta un gameset
+      //Y se reinicia el contador de acuerdo con los sets (3-5)
       if (juegoLocal == 6) {
         finalGameSet = true;
         juegoLocal = 0;
