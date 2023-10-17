@@ -36,6 +36,7 @@ class GameSet {
       marcador['Juegos locales'] = juegoLocal;
       if (juegoLocal == 6) {
         finalGameSet = true;
+        juegoLocal = 0;
       } else {
         finalGameSet = false;
       }
@@ -55,6 +56,7 @@ class GameSet {
       marcador['Juegos visitante'] = juegoVisita;
       if (juegoVisita == 6) {
         finalGameSet = true;
+        juegoVisita = 0;
       } else {
         finalGameSet = false;
       }

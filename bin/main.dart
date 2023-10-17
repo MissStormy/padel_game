@@ -1,11 +1,10 @@
 import 'dart:io';
-import 'package:padel_game/modelos/vistas.dart' as padel_game;
+import 'package:padel_game/modelos/vistas.dart';
 import 'package:padel_game/modelos/juego.dart';
 import 'package:padel_game/modelos/gameset.dart';
 import 'package:padel_game/modelos/partido.dart';
 
 void main(List<String> arguments) {
-  print("\x1B[2J\x1B[0;0H");
   /*Test de Clase Juego
   Juego juego = new Juego();
 
@@ -22,7 +21,7 @@ void main(List<String> arguments) {
   gameSet.addPuntoLocal();
   gameSet.addPuntoLocal();
   gameSet.addPuntoVisita();
-  gameSet.getGameSet();*/ 
+  gameSet.getGameSet();*/
 
   /*Test de Clase Partido
   Partido partido = new Partido();
@@ -34,5 +33,17 @@ void main(List<String> arguments) {
   partido.addPuntoVisita();
   partido.printPartido();*/
 
+  String? MGopc; //Menu general
+  String? MCopc; //Menu opciones
+  String? MPopc; //Menu partido
 
+  Vistas vista = new Vistas();
+
+  vista.limpiaPantalla();
+
+  vista.printMenuGeneral();
+  while (MGopc != "3") {
+    MGopc = stdin.readLineSync();
+    vista.menuGeneral(MGopc);
+  }
 }
