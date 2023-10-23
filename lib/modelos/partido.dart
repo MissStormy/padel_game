@@ -69,5 +69,8 @@ bool? resultado = false;
     print("Local: ${marcador['Sets locales']}");
     print("Visitante: ${marcador['Sets visitante']}");
     print("=========================");
+    print("1. Punto local");
+    print("2. Punto visitante");
+    print("3. Terminar partido");
   }
 }

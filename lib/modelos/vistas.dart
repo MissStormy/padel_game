@@ -113,6 +113,7 @@ class Vistas {
     print("| 2. Anotar punto para visitante            |");
     print("| 3. Terminar partido                       |");
     print("=============================================");
+    
   }
 
   void menuPartido(String? MPopc) {
@@ -123,6 +124,7 @@ class Vistas {
         //Partido > Gameset > Juego
         setPartidoLocal = partido.addPuntoLocal();
         partido.printPartido();
+        //printMenuPartido();
         //printMenuPartido();
         //Si se gana un set, se va sumando al marcador
         if (setPartidoLocal == true) {
@@ -135,11 +137,13 @@ class Vistas {
           //print("Final de partido!! Ha ganado $jugador1");
           ganador = jugador1;
           printMarcador();
+          
           exit(1);
         }
       case "2":
         setPartidoVisita = partido.addPuntoVisita();
         partido.printPartido();
+        //printMenuPartido();
         //printMenuPartido();
         if (setPartidoVisita == true) {
           contVisita++;
@@ -149,6 +153,7 @@ class Vistas {
           //print("Final de partido!! Ha ganado $jugador2");
           ganador = jugador2;
           printMarcador();
+          
           exit(1);
         }
       case "3":
